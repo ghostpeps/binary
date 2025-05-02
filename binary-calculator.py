@@ -28,7 +28,7 @@ with col2:
     convertor = st.selectbox(label=" ", options=("Binary to Decimal", "Decimal to Binary"), index=None, label_visibility="collapsed")
 with col1:
     if convertor == "Binary to Decimal":
-        binary = st.number_input(label=" ", min_value=0, value=None, step=1, format="%1b", placeholder="Enter a Binary Number...", label_visibility="collapsed")
+        binary = st.number_input(label=" ", min_value=0, value=None, step=1, format="%1d", placeholder="Enter a Binary Number...", label_visibility="collapsed")
     elif convertor == "Decimal to Binary":
         decimal = st.number_input(label=" ", min_value=0, value=None, step=1, format="%1d", placeholder="Enter a Decimal Number...", label_visibility="collapsed")
 with col3:
