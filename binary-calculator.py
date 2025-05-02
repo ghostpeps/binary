@@ -13,7 +13,7 @@ def convertb(no: int) -> int:
         exp += 1
     return whole
 def convertd(no: int) -> int:
-    q = None
+    q = 1
     num = 0
     while q != 0:
         q, r = divmod(no, 2)
