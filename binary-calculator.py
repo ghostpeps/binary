@@ -1,7 +1,7 @@
 import streamlit as st
 
 def convertb(no: int) -> int:
-    whole = 0
+    whole = str()
     exp = 1
     strno = str(no)
     num = 0
@@ -9,9 +9,9 @@ def convertb(no: int) -> int:
     placeno = len(strno)
     while place != exp:
         num = strno[-exp:-1]
-        whole = whole + (num * (2 ** place))
+        whole = whole + str((num * (2 ** place))
         exp += 1
-    return whole
+    return int(whole)
 def convertd(no: int) -> int:
     q = 1
     num = 0
