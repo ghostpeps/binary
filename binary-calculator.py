@@ -1,15 +1,25 @@
 import streamlit as st
 
-def convertb(no):
+def convertb(no: int) -> int:
     whole = 0
-    exp = 0
+    exp = 1
     strno = str(no)
     num = 0
-    place = len(str(no)) - 1
-    placeno = len(str(no))
+    place = len(strno) - 1
+    placeno = len(strno)
     while place != exp:
-        num = strno[-placeno:-1]
-        whole = whole + num * 2 ** place
+        num = strno[-exp:-1]
+        whole = whole + (num * (2 ** place))
+        exp += 1
+    return whole
+def convertd(no: int) -> int:
+    q = None
+    num = 0
+    while q != 0:
+        q, r = divmod(no, 2)
+        no = q
+        num = num + r
+    return num[::-1]
 st.title("A Binary Calculator")
 st.write("By Bhavish\n")
 st.write("Binary Convertor")
