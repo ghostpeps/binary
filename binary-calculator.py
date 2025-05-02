@@ -25,7 +25,7 @@ st.write("By Bhavish\n")
 st.write("Binary Convertor")
 col1, col2, col3 = st.columns(3)
 with col2:
-    convertor = st.selectbox(options=("Binary to Decimal", "Decimal to Binary"), index=None)
+    convertor = st.selectbox(label=" "options=("Binary to Decimal", "Decimal to Binary"), index=None, label_visibility="collapsed")
 with col1:
     if convertor == "Binary to Decimal":
         binary = st.number_input(min_value=0, value=None, step=1, format="%1b", placeholder="Enter a Binary Number...")
