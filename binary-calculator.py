@@ -43,7 +43,7 @@ with col1:
 with col3:
     if convertor == "Binary to Decimal":
         num = convertb(binary)
-        st.write(num + "₁₀")
+        st.write(f"{num}₁₀")
     elif convertor == "Decimal to Binary":
         num = convertd(decimal)
-        st.write(num + "₂")
+        st.write(f"{num}₂")
