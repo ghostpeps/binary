@@ -9,7 +9,8 @@ def convertb(no: int) -> int:
     placeno = len(strno)
     while place != exp:
         num = strno[-exp:-1]
-        whole = whole + (int(num) * (2 ** place))
+        numno = int(num)
+        whole = whole + (numno * (2 ** place))
         exp += 1
     return whole
 def convertd(no: int) -> int:
