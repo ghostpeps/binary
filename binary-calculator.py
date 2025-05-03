@@ -13,17 +13,21 @@ def convertb(no: int) -> int:
         whole = whole + (numno * (2 ** place))
         exp += 1
     return whole
-def convertd(no: int) -> int:
-    q = 1
-    num = 0
-    if no is not None:
-        while q != 0:
-            q, r = divmod(no, 2)
-            no = q
-            num = num + r
-        else:
-            numno = str(num)
-            return numno[::-1]
+def convertd(no: int) -> str:
+    if no < 0:
+        return "Input must be a non-negative integer."
+    
+    if no == 0:
+        return "0"
+    
+    binary_digits = []
+    
+    while no > 0:
+        binary_digits.append(str(no % 2))  # Get the remainder
+        no //= 2  # Integer division by 2
+    
+    binary_digits.reverse()  # To maintain correct order of binary digits
+    return ''.join(binary_digits)  # Join digits to form the final binary string
 st.title("A Binary Calculator")
 st.write("By Bhavish\n")
 st.write("Binary Convertor")
