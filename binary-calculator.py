@@ -1,18 +1,5 @@
 import streamlit as st
 
-def convertb(no: int) -> int:
-    whole = str()
-    exp = 1
-    strno = str(no)
-    num = 0
-    place = len(strno) - 1
-    placeno = len(strno)
-    while place != exp:
-        num = strno[-exp:-1]
-        numno = int(num)
-        whole = whole + (numno * (2 ** place))
-        exp += 1
-    return whole
 def convertd(no: int) -> str:
     if no is not None:
         if no < 0:
@@ -42,11 +29,12 @@ with col1:
         decimal = st.number_input(label=" ", min_value=0, value=None, step=1, format="%1d", placeholder="Enter a Decimal Number...", label_visibility="collapsed")
 with col3:
     if convertor == "Binary to Decimal":
-        num = convertb(binary)
         if num is None:
             st.write("Decimal Number comes out here...")
         elif num is not None:
-            st.write(f"{num}₁₀")
+            numstr = bin(num)
+            numint = numstr[2:]
+            st.write(f"{numint}₁₀")
     elif convertor == "Decimal to Binary":
         num = convertd(decimal)
         if num is None:
