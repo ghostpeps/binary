@@ -22,7 +22,8 @@ def convertd(no: int) -> int:
             no = q
             num = num + r
         else:
-            return num[::-1]
+            numno = str(num)
+            return numno[::-1]
 st.title("A Binary Calculator")
 st.write("By Bhavish\n")
 st.write("Binary Convertor")
