@@ -16,11 +16,13 @@ def convertb(no: int) -> int:
 def convertd(no: int) -> int:
     q = 1
     num = 0
-    while q != 0:
-        q, r = divmod(no, 2)
-        no = q
-        num = num + r
-    return num[::-1]
+    if no is not None:
+        while q != 0:
+            q, r = divmod(no, 2)
+            no = q
+            num = num + r
+        else:
+            return num[::-1]
 st.title("A Binary Calculator")
 st.write("By Bhavish\n")
 st.write("Binary Convertor")
