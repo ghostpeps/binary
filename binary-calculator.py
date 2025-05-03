@@ -32,7 +32,7 @@ with col3:
         if num is None:
             st.write("Decimal Number comes out here...")
         elif num is not None:
-            numstr = bin(num)
+            numstr = bin(binary)
             numint = numstr[2:]
             st.write(f"{numint}₁₀")
     elif convertor == "Decimal to Binary":
