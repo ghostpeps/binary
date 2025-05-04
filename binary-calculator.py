@@ -34,12 +34,13 @@ with col3:
         elif binary is not None:
             is_binary = 1
             for x in list(str(binary)):
-                    if x == "0" or "1":
-                        continue
-                    else:
-                        st.write("Please enter a valid binary number...")
-                        is_binary = 0
-                        break
+                st.write(x)
+                if x == "0" or "1":
+                    continue
+                else:
+                    st.write("Please enter a valid binary number...")
+                    is_binary = 0
+                    break
             if is_binary == 1:
                 num = int(str(binary), 2)
                 st.write(f"{num}₁₀")
