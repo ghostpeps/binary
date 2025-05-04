@@ -51,4 +51,7 @@ with col4:
 with col5:
     operation = st.selectbox(label=" ", options=("Addition (+)", "Subtract (-)", "Multiply (×)", "Division (÷)", "Exponent (xʸ)", "AND (&)", "OR (|)", "NOT (~)", "XOR (^)", "Arithmetic Left Shift (<<)", "Arithmetic Right Shift (>>)", "Logical Left Shift (<<<)", "Logical Right Shift (>>>)"), index=None, placeholder="Choose an operation...", label_visibility="collapsed")
 with col6:
-    num_two = st.number_input(label=" ", min_value=0, value=None, step=1, format="%1d", placeholder="Enter a your second Binary Number...", label_visibility="collapsed")
+    if operation == "NOT (~)":
+        st.write()
+    elif operation != "NOT (~)":
+        num_two = st.number_input(label=" ", min_value=0, value=None, step=1, format="%1d", placeholder="Enter a your second Binary Number...", label_visibility="collapsed")
