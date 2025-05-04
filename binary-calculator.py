@@ -16,6 +16,56 @@ def convertd(no: int) -> str:
         
         binary_digits.reverse()
         return ''.join(binary_digits)
+
+def float_to_binary(number):
+    integer_part = int(number)
+    fractional_part = number - integer_part
+    
+    integer_binary = bin(integer_part)[2:]
+    fractional_binary = ""
+    
+    while fractional_part and len(fractional_binary) < 10:
+        fractional_part *= 2
+        if fractional_part >= 1:
+            fractional_binary += "1"
+            fractional_part -= 1
+        else:
+            fractional_binary += "0"
+            
+    if fractional_binary:
+        return integer_binary + "." + fractional_binary
+    else:
+        return integer_binary
+
+
+def convert(num_one, num_two, operation) -> str:
+    if operation == "Addition (+)":
+        whole = int(str(num_one), 2) + int(str(num_two), 2)
+        return converted(whole)
+    elif operation == "Subtract (-)":
+        whole = int(str(num_one), 2) - int(str(num_two), 2)
+        return converted(whole)
+    elif operation == "Multiply (×)":
+        whole = int(str(num_one), 2) * int(str(num_two), 2)
+        return converted(whole)
+    elif operation == "Division (÷)":
+        whole = int(str(num_one), 2) / int(str(num_two), 2)
+        return float_to_binary(number)
+    elif operation == "Exponent (xʸ)":
+        whole = int(str(num_one), 2) ** int(str(num_two), 2)
+        return converted(whole)
+    elif operation == "AND (&)":
+        return num_one & num_two
+    elif operation == "OR (|)":
+        return num_one | num_two
+    elif operation == "NOT (~)":
+        return ~num_one
+    elif operation == "XOR (^)":
+        return num_one ^ num_two
+    elif operation == "Arithmetic Left Shift (<<)":
+        return num_one << num_two
+    elif operation == "Arithmetic Right Shift (>>)":
+        return num_one >> num_two
 st.title("A Binary Calculator")
 st.write("By Bhavish\n")
 st.write("Binary Convertor")
@@ -39,6 +89,7 @@ with col3:
                 st.write("Please enter a valid binary number...")
             else:
                 num = int(str(binary), 2)
+                numone = str(binary)
                 st.write(f"{num}₁₀")
     elif convertor == "Decimal to Binary":
         num = convertd(decimal)
@@ -49,9 +100,23 @@ with col3:
 with col4:
     num_one = st.number_input(label=" ", min_value=0, value=None, step=1, format="%1d", placeholder="Enter a your first Binary Number...", label_visibility="collapsed")
 with col5:
-    operation = st.selectbox(label=" ", options=("Addition (+)", "Subtract (-)", "Multiply (×)", "Division (÷)", "Exponent (xʸ)", "AND (&)", "OR (|)", "NOT (~)", "XOR (^)", "Arithmetic Left Shift (<<)", "Arithmetic Right Shift (>>)", "Logical Left Shift (<<<)", "Logical Right Shift (>>>)"), index=None, placeholder="Choose an operation...", label_visibility="collapsed")
+    operation = st.selectbox(label=" ", options=("Addition (+)", "Subtract (-)", "Multiply (×)", "Division (÷)", "Exponent (xʸ)", "AND (&)", "OR (|)", "NOT (~)", "XOR (^)", "Arithmetic Left Shift (<<)", "Arithmetic Right Shift (>>)"), index=None, placeholder="Choose an operation...", label_visibility="collapsed")
 with col6:
     if operation == "NOT (~)":
         st.write()
     elif operation != "NOT (~)":
         num_two = st.number_input(label=" ", min_value=0, value=None, step=1, format="%1d", placeholder="Enter a your second Binary Number...", label_visibility="collapsed")
+try:
+    x = int(str(num_one), 2)
+except ValueError:
+    st.write("Please check your first binary number...")
+else:
+    try:
+        x = int(str(num_one), 2)
+    except ValueError:
+        st.write("Please check your second binary number...")
+    else:
+        if operation == "NOT (~)":
+            no = binary(num_one, 0, operation)
+        elif operation != "NOT (~)":
+            no = binary(num_one, num_two, operation)
