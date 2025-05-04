@@ -102,6 +102,7 @@ st.write("By Bhavish")
 st.markdown(":small[For best results, click on the :material/more_vert: -> Settings -> :material/check_box: Wide mode]\n")
 st.write("Binary Convertor")
 col1, col2, col3 = st.columns(3)
+co1l = st.columns(1)
 col4, col5, col6 = st.columns(3)
 with col2:
     convertor = st.selectbox(label=" ", options=("Binary to Decimal", "Decimal to Binary"), index=None, label_visibility="collapsed")
@@ -129,7 +130,8 @@ with col3:
             st.write("Binary Number comes out here...")
         elif num is not None:
             st.write(f"{num}₂")
-st.write("Binary Calculator")
+with co1l:
+    st.write("Binary Calculator")
 with col4:
     num_one = st.number_input(label=" ", min_value=0, value=None, step=1, format="%1d", placeholder="Enter a your first Binary Number...", label_visibility="collapsed")
 with col5:
