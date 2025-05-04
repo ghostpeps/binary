@@ -29,9 +29,9 @@ with col1:
         decimal = st.number_input(label=" ", min_value=0, value=None, step=1, format="%1d", placeholder="Enter a Decimal Number...", label_visibility="collapsed")
 with col3:
     if convertor == "Binary to Decimal":
-        if num is None:
+        if binary is None:
             st.write("Decimal Number comes out here...")
-        elif num is not None:
+        elif binary is not None:
             numstr = bin(binary)
             numint = numstr[2:]
             st.write(f"{numint}₁₀")
