@@ -78,9 +78,9 @@ def convert(num_one, num_two, operation) -> str:
         opr = ">>"
     if operation == "Exponent (xʸ)" or operation == "NOT (~)":
         if operation == "NOT (~)":
-            return f"~{num_one} = {no}"
+            return f"~{num_one}₂ = {no}₂"
     elif operation != "Exponent (xʸ)" and operation != "NOT (~)":
-        return f"{num_one} {opr} {num_two} = {no}"
+        return f"{num_one}₂ {opr} {num_two}₂ = {no}₂"
 st.title("A Binary Calculator")
 st.write("By Bhavish\n")
 st.write("Binary Convertor")
