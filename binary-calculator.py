@@ -135,16 +135,16 @@ if operation is not None:
     try:
         x = int(str(num_one), 2)
     except ValueError:
-        st.write("Please check/enter your first **binary** number...")
-    else:
-        try:
-            x = int(str(num_one), 2)
-        except ValueError:
+        if num_one is None and num_two is None:
+            st.write("Please check/enter both of your **binary** numbers...")
+        elif num_one is None:
+            st.write("Please check/enter your first **binary** number...")
+        elif num_two is None:
             st.write("Please check/enter your second **binary** number...")
-        else:
-            if operation == "NOT (~)":
-                no = convert(num_one, 0, operation)
-                st.write(no)
-            elif operation != "NOT (~)":
-                no = convert(num_one, num_two, operation)
-                st.write(no)
+    else:
+        if operation == "NOT (~)":
+            no = convert(num_one, 0, operation)
+            st.write(no)
+        elif operation != "NOT (~)":
+            no = convert(num_one, num_two, operation)
+            st.write(no)
