@@ -41,15 +41,15 @@ def float_to_binary(number):
 def convert(num_one, num_two, operation) -> str:
     if operation == "Addition (+)":
         whole = int(str(num_one), 2) + int(str(num_two), 2)
-        no = converted(whole)
+        no = convertd(whole)
         opr = "+"
     elif operation == "Subtract (-)":
         whole = int(str(num_one), 2) - int(str(num_two), 2)
-        no = converted(whole)
+        no = convertd(whole)
         opr = "-"
     elif operation == "Multiply (×)":
         whole = int(str(num_one), 2) * int(str(num_two), 2)
-        no = converted(whole)
+        no = convertd(whole)
         opr = "×"
     elif operation == "Division (÷)":
         whole = int(str(num_one), 2) / int(str(num_two), 2)
@@ -57,7 +57,7 @@ def convert(num_one, num_two, operation) -> str:
         opr = "÷"
     elif operation == "Exponent (xʸ)":
         whole = int(str(num_one), 2) ** int(str(num_two), 2)
-        no = converted(whole)
+        no = convertd(whole)
         return r"${\mathsf{" + num_one + "^{" + num_two + "} = " + no + "}$"
     elif operation == "AND (&)":
         no = num_one & num_two
