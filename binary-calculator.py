@@ -121,19 +121,20 @@ with col6:
         st.write()
     elif operation != "NOT (~)":
         num_two = st.number_input(label=" ", min_value=0, value=None, step=1, format="%1d", placeholder="Enter a your second Binary Number...", label_visibility="collapsed")
-try:
-    x = int(str(num_one), 2)
-except ValueError:
-    st.write("Please check your first binary number...")
-else:
+if operation is not None:
     try:
         x = int(str(num_one), 2)
     except ValueError:
-        st.write("Please check your second binary number...")
+        st.write("Please check your first binary number...")
     else:
-        if operation == "NOT (~)":
-            no = convert(num_one, 0, operation)
-            st.write(no)
-        elif operation != "NOT (~)":
-            no = convert(num_one, num_two, operation)
-            st.write(no)
+        try:
+            x = int(str(num_one), 2)
+        except ValueError:
+            st.write("Please check your second binary number...")
+        else:
+            if operation == "NOT (~)":
+                no = convert(num_one, 0, operation)
+                st.write(no)
+            elif operation != "NOT (~)":
+                no = convert(num_one, num_two, operation)
+                st.write(no)
