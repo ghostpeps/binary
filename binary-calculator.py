@@ -32,17 +32,19 @@ with col3:
         if binary is None:
             st.write("Decimal Number comes out here...")
         elif binary is not None:
-            y = 0
+            is_binary = 1
             for x in list(str(binary)):
                     if x == "0" or "1":
                         continue
-                        y += 1
-                        if y == len(str(binary)): break
                     else:
                         st.write("Please enter a valid binary number...")
+                        is_binary = 0
                         break
-            num = int(str(binary), 2)
-            st.write(f"{num}₁₀")
+            if is_binary == 1:
+                num = int(str(binary), 2)
+                st.write(f"{num}₁₀")
+            elif is_binary == 0:
+                st.write("Please enter a valid binary number...")
     elif convertor == "Decimal to Binary":
         num = convertd(decimal)
         if num is None:
