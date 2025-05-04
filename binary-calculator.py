@@ -68,7 +68,7 @@ def convert(num_one, num_two, operation) -> str:
         elif operation == "Exponent (xʸ)":
             whole = int(str(num_one), 2) ** int(str(num_two), 2)
             no = convertd(whole)
-            return r"${\mathsf{" + num_one + "^{" + num_two + "} = " + no + "}$"
+            return r"${\mathsf{" + str(num_one) + "^{" + str(num_two) + "} = " + str(no) + "}$"
         elif operation == "AND (&)":
             no = num_one & num_two
             opr = "&"
