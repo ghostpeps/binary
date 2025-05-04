@@ -98,7 +98,7 @@ def convert(num_one, num_two, operation) -> str:
         elif operation != "Exponent (xʸ)" and operation != "NOT (~)":
             return f"{num_one}₂ {opr} {num_two}₂ = {no}₂"
 st.title("A Binary Calculator")
-st.markdown(":blue-badge[By భvஇष :material/calculate:]")
+st.markdown("By Bhavish :material/calculate:")
 st.markdown(":small[For best results, click on the :material/more_vert: -> Settings -> :material/check_box: Wide mode]\n")
 st.write("Binary Convertor")
 col1, col2, col3 = st.columns(3)
