@@ -46,7 +46,7 @@ def convert(num_one, num_two, operation) -> str:
             st.write("Please check/enter both of your *binary* numbers...")
         elif num_one is None:
             st.write("Please check/enter your first *binary* number...")
-        elif non_two is None:
+        elif num_two is None:
             st.write("Please check/enter your second *binary* number...")
     else:
         if operation == "Addition (+)":
