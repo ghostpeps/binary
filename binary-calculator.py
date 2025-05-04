@@ -63,7 +63,7 @@ def convert(num_one, num_two, operation) -> str:
             opr = "×"
         elif operation == "Division (÷)":
             whole = int(str(num_one), 2) / int(str(num_two), 2)
-            no = float_to_binary(number)
+            no = float_to_binary(whole)
             opr = "÷"
         elif operation == "Exponent (xʸ)":
             whole = int(str(num_one), 2) ** int(str(num_two), 2)
