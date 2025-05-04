@@ -132,8 +132,8 @@ else:
         st.write("Please check your second binary number...")
     else:
         if operation == "NOT (~)":
-            no = binary(num_one, 0, operation)
+            no = convert(num_one, 0, operation)
             st.write(no)
         elif operation != "NOT (~)":
-            no = binary(num_one, num_two, operation)
+            no = convert(num_one, num_two, operation)
             st.write(no)
