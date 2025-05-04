@@ -37,7 +37,6 @@ with col3:
                     continue
                 else:
                     st.write("Please enter a valid binary number...")
-                    break
             else:
                 num = int(str(binary), 2)
                 st.write(f"{num}₁₀")
