@@ -99,7 +99,7 @@ def convert(num_one, num_two, operation) -> str:
             return f"{num_one}₂ {opr} {num_two}₂ = {no}₂"
 st.title("A Binary Calculator")
 st.write("By Bhavish")
-st.markdown(":small[For best results, click on the :material/more_vert: -> Settings -> :material/check_box: Wide mode]")
+st.markdown(":small[For best results, click on the :material/more_vert: -> Settings -> :material/check_box: Wide mode]\n")
 st.write("Binary Convertor")
 col1, col2, col3 = st.columns(3)
 col4, col5, col6 = st.columns(3)
