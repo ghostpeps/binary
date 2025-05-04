@@ -39,48 +39,58 @@ def float_to_binary(number):
 
 
 def convert(num_one, num_two, operation) -> str:
-    if operation == "Addition (+)":
-        whole = int(str(num_one), 2) + int(str(num_two), 2)
-        no = convertd(whole)
-        opr = "+"
-    elif operation == "Subtract (-)":
-        whole = int(str(num_one), 2) - int(str(num_two), 2)
-        no = convertd(whole)
-        opr = "-"
-    elif operation == "Multiply (×)":
-        whole = int(str(num_one), 2) * int(str(num_two), 2)
-        no = convertd(whole)
-        opr = "×"
-    elif operation == "Division (÷)":
-        whole = int(str(num_one), 2) / int(str(num_two), 2)
-        no = float_to_binary(number)
-        opr = "÷"
-    elif operation == "Exponent (xʸ)":
-        whole = int(str(num_one), 2) ** int(str(num_two), 2)
-        no = convertd(whole)
-        return r"${\mathsf{" + num_one + "^{" + num_two + "} = " + no + "}$"
-    elif operation == "AND (&)":
-        no = num_one & num_two
-        opr = "&"
-    elif operation == "OR (|)":
-        no = num_one | num_two
-        opr = "|"
-    elif operation == "NOT (~)":
-        no = ~num_one
-    elif operation == "XOR (^)":
-        no = num_one ^ num_two
-        opr = "^"
-    elif operation == "Arithmetic Left Shift (<<)":
-        no = convertd(num_one << num_two)
-        opr = "<<"
-    elif operation == "Arithmetic Right Shift (>>)":
-        no = convertd(num_one >> num_two)
-        opr = ">>"
-    if operation == "Exponent (xʸ)" or operation == "NOT (~)":
-        if operation == "NOT (~)":
-            return f"~{num_one}₂ = {no}₂"
-    elif operation != "Exponent (xʸ)" and operation != "NOT (~)":
-        return f"{num_one}₂ {opr} {num_two}₂ = {no}₂"
+    try:
+        x = int(str(num_one), 2) + int(str(num_two), 2)
+    except ValueError:
+        if num_one is None and num_two is None:
+            st.write("Please check both of your *binary* numbers...")
+        elif num_one is None:
+            st.write("Please check your first *binary* number...")
+        elif non_two is None:
+            st.write("Please check your second *binary* number...")
+    else:
+        if operation == "Addition (+)":
+            whole = int(str(num_one), 2) + int(str(num_two), 2)
+            no = convertd(whole)
+            opr = "+"
+        elif operation == "Subtract (-)":
+            whole = int(str(num_one), 2) - int(str(num_two), 2)
+            no = convertd(whole)
+            opr = "-"
+        elif operation == "Multiply (×)":
+            whole = int(str(num_one), 2) * int(str(num_two), 2)
+            no = convertd(whole)
+            opr = "×"
+        elif operation == "Division (÷)":
+            whole = int(str(num_one), 2) / int(str(num_two), 2)
+            no = float_to_binary(number)
+            opr = "÷"
+        elif operation == "Exponent (xʸ)":
+            whole = int(str(num_one), 2) ** int(str(num_two), 2)
+            no = convertd(whole)
+            return r"${\mathsf{" + num_one + "^{" + num_two + "} = " + no + "}$"
+        elif operation == "AND (&)":
+            no = num_one & num_two
+            opr = "&"
+        elif operation == "OR (|)":
+            no = num_one | num_two
+            opr = "|"
+        elif operation == "NOT (~)":
+            no = ~num_one
+        elif operation == "XOR (^)":
+            no = num_one ^ num_two
+            opr = "^"
+        elif operation == "Arithmetic Left Shift (<<)":
+            no = convertd(num_one << num_two)
+            opr = "<<"
+        elif operation == "Arithmetic Right Shift (>>)":
+            no = convertd(num_one >> num_two)
+            opr = ">>"
+        if operation == "Exponent (xʸ)" or operation == "NOT (~)":
+            if operation == "NOT (~)":
+                return f"~{num_one}₂ = {no}₂"
+        elif operation != "Exponent (xʸ)" and operation != "NOT (~)":
+            return f"{num_one}₂ {opr} {num_two}₂ = {no}₂"
 st.title("A Binary Calculator")
 st.write("By Bhavish\n")
 st.write("Binary Convertor")
