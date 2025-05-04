@@ -41,31 +41,46 @@ def float_to_binary(number):
 def convert(num_one, num_two, operation) -> str:
     if operation == "Addition (+)":
         whole = int(str(num_one), 2) + int(str(num_two), 2)
-        return converted(whole)
+        no = converted(whole)
+        opr = "+"
     elif operation == "Subtract (-)":
         whole = int(str(num_one), 2) - int(str(num_two), 2)
-        return converted(whole)
+        no = converted(whole)
+        opr = "-"
     elif operation == "Multiply (×)":
         whole = int(str(num_one), 2) * int(str(num_two), 2)
-        return converted(whole)
+        no = converted(whole)
+        opr = "×"
     elif operation == "Division (÷)":
         whole = int(str(num_one), 2) / int(str(num_two), 2)
-        return float_to_binary(number)
+        no = float_to_binary(number)
+        opr = "÷"
     elif operation == "Exponent (xʸ)":
         whole = int(str(num_one), 2) ** int(str(num_two), 2)
-        return converted(whole)
+        no = converted(whole)
+        return r"${\mathsf{" + num_one + "^{" + num_two + "} = " + no + "}$"
     elif operation == "AND (&)":
-        return num_one & num_two
+        no = num_one & num_two
+        opr = "&"
     elif operation == "OR (|)":
-        return num_one | num_two
+        no = num_one | num_two
+        opr = "|"
     elif operation == "NOT (~)":
-        return ~num_one
+        no = ~num_one
     elif operation == "XOR (^)":
-        return num_one ^ num_two
+        no = num_one ^ num_two
+        opr = "^"
     elif operation == "Arithmetic Left Shift (<<)":
-        return num_one << num_two
+        no = num_one << num_two
+        opr = "<<"
     elif operation == "Arithmetic Right Shift (>>)":
-        return num_one >> num_two
+        no = num_one >> num_two
+        opr = ">>"
+    if operation == "Exponent (xʸ)" or operation == "NOT (~)":
+        if operation == "NOT (~)":
+            return f"~{num_one} = {no}"
+    elif operation != "Exponent (xʸ)" and operation != "NOT (~)":
+        return f"{num_one} {opr} {num_two} = {no}"
 st.title("A Binary Calculator")
 st.write("By Bhavish\n")
 st.write("Binary Convertor")
@@ -118,5 +133,7 @@ else:
     else:
         if operation == "NOT (~)":
             no = binary(num_one, 0, operation)
+            st.write(no)
         elif operation != "NOT (~)":
             no = binary(num_one, num_two, operation)
+            st.write(no)
