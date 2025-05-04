@@ -71,10 +71,10 @@ def convert(num_one, num_two, operation) -> str:
         no = num_one ^ num_two
         opr = "^"
     elif operation == "Arithmetic Left Shift (<<)":
-        no = num_one << num_two
+        no = converted(num_one << num_two)
         opr = "<<"
     elif operation == "Arithmetic Right Shift (>>)":
-        no = num_one >> num_two
+        no = converted(num_one >> num_two)
         opr = ">>"
     if operation == "Exponent (xʸ)" or operation == "NOT (~)":
         if operation == "NOT (~)":
