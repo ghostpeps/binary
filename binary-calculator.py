@@ -32,9 +32,9 @@ with col3:
         if binary is None:
             st.write("Decimal Number comes out here...")
         elif binary is not None:
-            if "1" or "0" is not in list(str(binary)):
+            if "1" or "0" not in list(str(binary)):
                 st.write("Please enter a valid binary number...")
-            elif "1" or "0" is in list(str(binary)):
+            elif "1" or "0" in list(str(binary)):
                 num = int(str(binary), 2)
                 st.write(f"{num}₁₀")
     elif convertor == "Decimal to Binary":
