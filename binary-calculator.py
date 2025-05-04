@@ -34,10 +34,10 @@ with col3:
         elif binary is not None:
             y = 0
             for x in list(str(binary)):
-                if y != len(str(binary)):
                     if x == "0" or "1":
                         continue
                         y += 1
+                        if y == len(str(binary)): break
                     else:
                         st.write("Please enter a valid binary number...")
                         break
