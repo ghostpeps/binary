@@ -32,9 +32,8 @@ with col3:
         if binary is None:
             st.write("Decimal Number comes out here...")
         elif binary is not None:
-            numstr = bin(binary)
-            numint = numstr[2:]
-            st.write(f"{numint}₁₀")
+            num = int(binary, 2)
+            st.write(f"{num}₁₀")
     elif convertor == "Decimal to Binary":
         num = convertd(decimal)
         if num is None:
