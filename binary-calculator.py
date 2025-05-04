@@ -77,7 +77,7 @@ def convert(num_one, num_two, operation) -> str:
             opr = "|"
         elif operation == "NOT (~)":
             whole = ~int(str(num_one), 2)
-            no = converted(whole)
+            no = convertd(whole)
         elif operation == "XOR (^)":
             no = num_one ^ num_two
             opr = "^"
