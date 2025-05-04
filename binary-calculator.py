@@ -49,7 +49,6 @@ with col3:
 with col4:
     num_one = st.number_input(label=" ", min_value=0, value=None, step=1, format="%1d", placeholder="Enter a your first Binary Number...", label_visibility="collapsed")
 with col5:
-    operation = st.selectbox(label=" ", options=("plus (+)", "subtract (-)", "multiply (×)", "division (÷)", "exponent (xʸ)", "AND (&)", "OR (|)", "NOT (~)", "XOR (^)", "Left Shift (<<)", "Right Shift (>>)"), index=None, placeholder="Choose an operation...", label_visibility="collapsed")
+    operation = st.selectbox(label=" ", options=("Addition (+)", "Subtract (-)", "Multiply (×)", "Division (÷)", "Exponent (xʸ)", "AND (&)", "OR (|)", "NOT (~)", "XOR (^)", "Arithmetic Left Shift (<<)", "Arithmetic Right Shift (>>)", "Logical Left Shift (<<<)", "Logical Right Shift (>>>)"), index=None, placeholder="Choose an operation...", label_visibility="collapsed")
 with col6:
     num_two = st.number_input(label=" ", min_value=0, value=None, step=1, format="%1d", placeholder="Enter a your second Binary Number...", label_visibility="collapsed")
-    
