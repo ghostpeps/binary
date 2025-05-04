@@ -39,6 +39,7 @@ with col3:
                     st.write("Please enter a valid binary number...")
                     break
             else:
+                st.write("Please enter a valid binary number...")
                 num = int(str(binary), 2)
                 st.write(f"{num}₁₀")
     elif convertor == "Decimal to Binary":
