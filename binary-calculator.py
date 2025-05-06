@@ -86,6 +86,15 @@ def convert(num_one, num_two, operation) -> str:
         elif operation == "XOR (⊻)":
             no = num_one ^ num_two
             opr = "⊻"
+        elif operation == "NAND (⊼)":
+            noone = num_one & num_two
+            whole = ~int(str(noone), 2)
+            if whole < 0:
+                whole *= -1
+                no = convertd(whole)
+                no *= -1
+            elif whole >= 0:
+                no = convertd(whole)
         elif operation == "Arithmetic Left Shift (<<)":
             no = convertd(num_one << num_two)
             opr = "<<"
