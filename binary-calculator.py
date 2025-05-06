@@ -69,13 +69,13 @@ def convert(num_one, num_two, operation) -> str:
             whole = int(str(num_one), 2) ** int(str(num_two), 2)
             no = convertd(whole)
             return r"$\mathsf{{" + str(num_one) + "_2}^{" + str(num_two) + "_2}} = " + str(no) + "_2$"
-        elif operation == "AND (&)":
+        elif operation == "AND (∧)":
             no = num_one & num_two
-            opr = "&"
-        elif operation == "OR (|)":
+            opr = "∧"
+        elif operation == "OR (∨)":
             no = num_one | num_two
-            opr = "|"
-        elif operation == "NOT (~)":
+            opr = "∨"
+        elif operation == "NOT (¬)":
             whole = ~int(str(num_one), 2)
             if whole < 0:
                 whole *= -1
@@ -83,19 +83,19 @@ def convert(num_one, num_two, operation) -> str:
                 no *= -1
             elif whole >= 0:
                 no = convertd(whole)
-        elif operation == "XOR (^)":
+        elif operation == "XOR (⊻)":
             no = num_one ^ num_two
-            opr = "^"
+            opr = "⊻"
         elif operation == "Arithmetic Left Shift (<<)":
             no = convertd(num_one << num_two)
             opr = "<<"
         elif operation == "Arithmetic Right Shift (>>)":
             no = convertd(num_one >> num_two)
             opr = ">>"
-        if operation == "Exponent (xʸ)" or operation == "NOT (~)":
-            if operation == "NOT (~)":
-                return f"~{num_one}₂ = {no}₂"
-        elif operation != "Exponent (xʸ)" and operation != "NOT (~)":
+        if operation == "Exponent (xʸ)" or operation == "NOT (¬)":
+            if operation == "NOT (¬)":
+                return f"¬{num_one}₂ = {no}₂"
+        elif operation != "Exponent (xʸ)" and operation != "NOT (¬)":
             return f"{num_one}₂ {opr} {num_two}₂ = {no}₂"
 st.title(":material/calculate: A Binary Calculator")
 st.write("By Bhavish")
@@ -133,11 +133,11 @@ st.write("Binary Calculator")
 with col4:
     num_one = st.number_input(label=" ", min_value=0, value=None, step=1, format="%1d", placeholder="Enter a your first Binary Number...", label_visibility="collapsed")
 with col5:
-    operation = st.selectbox(label=" ", options=("Addition (+)", "Subtract (-)", "Multiply (×)", "Division (÷)", "Exponent (xʸ)", "AND (&)", "OR (|)", "NOT (~)", "XOR (^)", "Arithmetic Left Shift (<<)", "Arithmetic Right Shift (>>)"), index=None, placeholder="Choose an operation...", label_visibility="collapsed")
+    operation = st.selectbox(label=" ", options=("Addition (+)", "Subtract (-)", "Multiply (×)", "Division (÷)", "Exponent (xʸ)", "AND (∧)", "OR (∨)", "NOT (¬)", "XOR (⊻)", "NAND (⊼)", "NOR (⊽)", "XNOR (≡)", "Arithmetic Left Shift (<<)", "Arithmetic Right Shift (>>)"), index=None, placeholder="Choose an operation...", label_visibility="collapsed")
 with col6:
-    if operation == "NOT (~)":
+    if operation == "NOT (¬)":
         st.write()
-    elif operation != "NOT (~)":
+    elif operation != "NOT (¬)":
         num_two = st.number_input(label=" ", min_value=0, value=None, step=1, format="%1d", placeholder="Enter a your second Binary Number...", label_visibility="collapsed")
 if operation is not None:
     try:
@@ -150,9 +150,9 @@ if operation is not None:
         elif num_two is None:
             st.write("Please check/enter your second **binary** number...")
     else:
-        if operation == "NOT (~)":
+        if operation == "NOT (¬)":
             no = convert(num_one, 0, operation)
             st.write(no)
-        elif operation != "NOT (~)":
+        elif operation != "NOT (¬)":
             no = convert(num_one, num_two, operation)
             st.write(no)
