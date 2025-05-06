@@ -62,9 +62,14 @@ def convert(num_one, num_two, operation) -> str:
             no = convertd(whole)
             opr = "×"
         elif operation == "Division (÷)":
-            whole = int(str(num_one), 2) / int(str(num_two), 2)
-            no = float_to_binary(whole)
-            opr = "÷"
+            try:
+                whole = int(str(num_one), 2) / int(str(num_two), 2)
+            except ZeroDivisionError:
+                st.write("Please check/enter your second **binary** number...")
+            else:
+                whole = int(str(num_one), 2) / int(str(num_two), 2)
+                no = float_to_binary(whole)
+                opr = "÷"
         elif operation == "Exponent (xʸ)":
             whole = int(str(num_one), 2) ** int(str(num_two), 2)
             no = convertd(whole)
