@@ -170,7 +170,5 @@ if operation is not None:
         elif operation != "NOT (¬)":
             no = convert(num_one, num_two, operation)
             st.write(no)
-onecol = st.columns(1)
-with onecol:
-    with st.popover(label="Share", icon=":material/share:"):
-        st.material("For more, click Share next to the :material/star:")
+with st.popover(label="Share", icon=":material/share:"):
+    st.material("For more, click Share next to the :material/star:")
