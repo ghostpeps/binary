@@ -1,0 +1,9 @@
+[theme]
+base="dark"
+primaryColor="forestGreen"
+backgroundColor="black"
+secondaryBackgroundColor="#636666"
+textColor="#B5E6C9"
+font="monospace"
+borderColor="white"
+codeBackgroundColor="#414545"
