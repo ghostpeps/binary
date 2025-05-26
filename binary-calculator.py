@@ -171,4 +171,4 @@ if operation is not None:
             no = convert(num_one, num_two, operation)
             st.write(no)
 with st.popover(label="Share", icon=":material/share:"):
-    st.material("For more, click Share next to the :material/star:")
+    st.markdown("For more, click Share next to the :material/star:")
